@@ -139,6 +139,9 @@ func TestWildcardImportPath(t *testing.T) {
 		if err == nil && tt.wantErr {
 			t.Errorf("%s: got %#v, want error", tt.path, tag)
 		}
+		if tag != nil && *tag != tt.want {
+			t.Errorf("%s: got %#v, want %#v", tt.path, *tag, tt.want)
+		}
 	}
 }
 
