@@ -77,7 +77,7 @@ func (ip ImportPath) WildcardTagFor(req *http.Request) (*ImportTag, error) {
 	return &ImportTag{
 		ImportPath: path.Join(ip.From, seg),
 		VCS:        ip.VCS,
-		VCSRepo:    path.Join(ip.To, seg),
+		VCSRepo:    ip.To + "/" + seg,
 	}, nil
 }
 
